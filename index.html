@@ -10,32 +10,58 @@
       font-family: Arial, sans-serif;
     }
 
-    .banner-container {
+    .container {
       position: relative;
       width: 100vw;
       height: 100vh;
       overflow: hidden;
     }
 
-    .banner-container img {
+    .banner {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
     }
 
-    .button-group {
+    .profile-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      font-size: 14px;
+      font-weight: bold;
+      color: white;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .buttons-wrapper {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      display: grid;
-      grid-template-columns: repeat(2, auto);
-      gap: 15px 25px;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 1;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
     }
 
     .glass-button {
-      all: unset;
       padding: 15px 25px;
       font-size: 18px;
       font-weight: bold;
@@ -46,33 +72,34 @@
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       cursor: pointer;
-      text-align: center;
+      white-space: nowrap;
     }
 
     @media (max-width: 600px) {
-      .button-group {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-
-      .glass-button {
-        font-size: 16px;
-        padding: 12px 20px;
+      .button-row {
+        flex-direction: column;
+        align-items: center;
       }
     }
   </style>
 </head>
+
 <body>
-  <div class="banner-container">
-    <img src="/banner.jpg" alt="Головне фото" />
-    <div class="button-group">
-      <button class="glass-button">Купити річ</button>
-      <button class="glass-button">Продати річ</button>
-      <button class="glass-button">Купити послугу</button>
-      <button class="glass-button">Продати послугу</button>
+  <div class="container">
+    <img src="/banner.jpg" alt="Головне фото" class="banner" />
+
+    <button class="profile-button">Мій кабінет</button>
+
+    <div class="buttons-wrapper">
+      <div class="button-row">
+        <button class="glass-button">Купити річ</button>
+        <button class="glass-button">Продати річ</button>
+      </div>
+      <div class="button-row">
+        <button class="glass-button">Купити послугу</button>
+        <button class="glass-button">Продати послугу</button>
+      </div>
     </div>
   </div>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
