@@ -30,8 +30,8 @@
     .profile-button {
       position: absolute;
       top: 20px;
-      right: 20px;
-      padding: 10px 15px;
+      left: 20px;
+      padding: 8px 14px;
       font-size: 14px;
       font-weight: bold;
       color: white;
@@ -50,20 +50,16 @@
       left: 50%;
       transform: translate(-50%, -50%);
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-      z-index: 1;
-    }
-
-    .button-row {
-      display: flex;
-      gap: 20px;
+      flex-wrap: wrap;
+      gap: 12px 20px;
       justify-content: center;
+      z-index: 1;
+      max-width: 90%;
     }
 
     .glass-button {
-      padding: 15px 25px;
-      font-size: 18px;
+      padding: 12px 18px;
+      font-size: 16px;
       font-weight: bold;
       color: white;
       background: rgba(255, 255, 255, 0.1);
@@ -73,12 +69,15 @@
       -webkit-backdrop-filter: blur(8px);
       cursor: pointer;
       white-space: nowrap;
+      min-width: 140px;
+      text-align: center;
     }
 
     @media (max-width: 600px) {
-      .button-row {
-        flex-direction: column;
-        align-items: center;
+      .glass-button {
+        min-width: 130px;
+        padding: 10px 16px;
+        font-size: 15px;
       }
     }
   </style>
@@ -91,14 +90,10 @@
     <button class="profile-button">Мій кабінет</button>
 
     <div class="buttons-wrapper">
-      <div class="button-row">
-        <button class="glass-button">Купити річ</button>
-        <button class="glass-button">Продати річ</button>
-      </div>
-      <div class="button-row">
-        <button class="glass-button">Купити послугу</button>
-        <button class="glass-button">Продати послугу</button>
-      </div>
+      <button class="glass-button">Купити річ</button>
+      <button class="glass-button">Продати річ</button>
+      <button class="glass-button">Купити послугу</button>
+      <button class="glass-button">Продати послугу</button>
     </div>
   </div>
 </body>
