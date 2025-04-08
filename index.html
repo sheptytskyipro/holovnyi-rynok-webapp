@@ -2,148 +2,76 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Головний Ринок</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      overflow: hidden;
-    }
-
-    .background {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: url('banner.jpg') no-repeat center center;
+      background-image: url('banner.jpg');
       background-size: cover;
-      z-index: -2;
-    }
-
-    .overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backdrop-filter: none;
-      z-index: -1;
-    }
-
-    .container {
-      position: relative;
-      width: 100%;
+      background-position: center;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
+      justify-content: center;
       align-items: center;
-      padding-bottom: 100px;
     }
 
-    .apple {
-      position: absolute;
-      top: 32%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      backdrop-filter: blur(6px);
-      overflow: hidden;
-      z-index: 2;
-    }
-
-    .apple img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .title {
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 24px;
-      font-weight: bold;
-      text-shadow: 0 0 10px rgba(0,0,0,0.4);
-    }
-
-    .menu-button {
+    .top-button {
       position: absolute;
       top: 20px;
       left: 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: white;
       padding: 10px 20px;
-      border-radius: 12px;
-      backdrop-filter: blur(6px);
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .button-grid {
-      display: grid;
-      grid-template-columns: repeat(2, auto);
-      gap: 15px;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px;
-    }
-
-    .glass-button {
-      padding: 15px 20px;
-      font-size: 16px;
-      font-weight: bold;
       color: white;
       background: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 12px;
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      font-weight: bold;
       cursor: pointer;
     }
 
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 40px;
+      z-index: 2;
+    }
+
+    .buttons button {
+      padding: 15px 25px;
+      font-size: 16px;
+      color: white;
+      font-weight: bold;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      cursor: pointer;
+      min-width: 130px;
+    }
+
     @media (max-width: 600px) {
-      .apple {
-        width: 80px;
-        height: 80px;
-        top: 30%;
-      }
-
-      .title {
-        font-size: 20px;
-      }
-
-      .glass-button {
-        font-size: 15px;
-        padding: 12px 18px;
-      }
-
-      .button-grid {
-        gap: 10px;
+      .buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
       }
     }
   </style>
 </head>
 <body>
-  <div class="background"></div>
-  <div class="overlay"></div>
+  <button class="top-button">Мій кабінет</button>
 
-  <button class="menu-button">Мій кабінет</button>
-  <div class="title">Головний Ринок</div>
-
-  <div class="apple">
-    <img src="apple.png" alt="Яблуко" />
-  </div>
-
-  <div class="container">
-    <div class="button-grid">
-      <button class="glass-button">Купити річ</button>
-      <button class="glass-button">Продати річ</button>
-      <button class="glass-button">Купити послугу</button>
-      <button class="glass-button">Продати послугу</button>
-    </div>
+  <div class="buttons">
+    <button>Купити річ</button>
+    <button>Продати річ</button>
+    <button>Купити послугу</button>
+    <button>Продати послугу</button>
   </div>
 </body>
 </html>
