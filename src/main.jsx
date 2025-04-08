@@ -1,9 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-const App = () => {
-  return <h1>Привіт з React!</h1>;
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    {/* Прибрав Привіт з React */}
+  </React.StrictMode>
+);
