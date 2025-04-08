@@ -1,0 +1,30 @@
+nano src/main.jsx
+git add public/banner.jpg
+git commit -m "Додав банер"
+git push
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Головний Ринок</title>
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif;">
+
+  <!-- Банер -->
+  <img src="/banner.jpg" alt="Головне фото" style="width: 100vw; height: 100vh; object-fit: cover; display: block;" /> margin-bottom: 20px;" />
+
+  <!-- Кнопки -->
+  <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+    <button style="padding: 15px 30px; font-size: 18px;">Купити річ</button>
+    <button style="padding: 15px 30px; font-size: 18px;">Продати річ</button>
+    <button style="padding: 15px 30px; font-size: 18px;">Купити послугу</button>
+    <button style="padding: 15px 30px; font-size: 18px;">Продати послугу</button>
+  </div>
+
+  <!-- Підключення React -->
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+
+</body>
+</html>
