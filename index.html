@@ -8,52 +8,58 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-image: url('banner.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      overflow: hidden;
     }
 
-    .top-button {
+    .banner {
+      background-image: url("bbanner.jpg");
+      background-size: cover;
+      background-position: center;
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    .cabinet-button {
       position: absolute;
       top: 20px;
       left: 20px;
       padding: 10px 20px;
       color: white;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-weight: bold;
       border-radius: 12px;
+      background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      font-weight: bold;
+      border: 1px solid rgba(255, 255, 255, 0.2);
       cursor: pointer;
     }
 
     .buttons {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       flex-wrap: wrap;
+      gap: 10px;
       justify-content: center;
-      gap: 15px;
-      margin-top: 40px;
-      z-index: 2;
     }
 
     .buttons button {
+      all: unset;
       padding: 15px 25px;
-      font-size: 16px;
-      color: white;
+      font-size: 18px;
       font-weight: bold;
+      color: white;
       background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
       cursor: pointer;
       min-width: 130px;
+      text-align: center;
     }
 
     @media (max-width: 600px) {
@@ -61,17 +67,23 @@
         flex-direction: row;
         flex-wrap: wrap;
       }
+
+      .buttons button {
+        flex: 1 1 calc(50% - 10px);
+      }
     }
   </style>
 </head>
 <body>
-  <button class="top-button">Мій кабінет</button>
+  <div class="banner">
+    <button class="cabinet-button">Мій кабінет</button>
 
-  <div class="buttons">
-    <button>Купити річ</button>
-    <button>Продати річ</button>
-    <button>Купити послугу</button>
-    <button>Продати послугу</button>
+    <div class="buttons">
+      <button>Купити річ</button>
+      <button>Продати річ</button>
+      <button>Купити послугу</button>
+      <button>Продати послугу</button>
+    </div>
   </div>
 </body>
 </html>
